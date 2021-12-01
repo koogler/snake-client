@@ -16,6 +16,22 @@ const connect = function () {
     conn.write("Name: EVN")
   });
 
+  // conn.on("connect", () => {
+  //   conn.write("Move: up")
+  // })
+
+  // conn.on("connect", () => {
+  //   conn.write("Move: down")
+  // })
+
+  // conn.on("connect", () => {
+  //   conn.write("Move: left")
+  // })
+
+  setInterval(conn.on("connect", () => {
+    conn.write("Move: right")
+  }), 500)
+
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
