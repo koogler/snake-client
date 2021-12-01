@@ -1,4 +1,5 @@
 const net = require("net");
+
 const connect = function () {
   const conn = net.createConnection({
     host: "localhost",
@@ -15,22 +16,6 @@ const connect = function () {
   conn.on("connect", () => {
     conn.write("Name: EVN")
   });
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: up")
-  // })
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: down")
-  // })
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: left")
-  // })
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: right")
-  // })
 
   conn.on('data', (data) => {
     console.log('Server says: ', data);
