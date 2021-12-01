@@ -28,9 +28,9 @@ const connect = function () {
   //   conn.write("Move: left")
   // })
 
-  setInterval(conn.on("connect", () => {
-    conn.write("Move: right")
-  }), 500)
+  // conn.on("connect", () => {
+  //   conn.write("Move: right")
+  // })
 
   conn.on('data', (data) => {
     console.log('Server says: ', data);
